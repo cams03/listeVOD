@@ -23,7 +23,12 @@
 					</div>
 					<div class="modal-body">
 					<div class="list-group-item" ng-repeat="product in baskets">
-						<h3>{{product.Title}}<span class="badge badge-pill">{{product.Type}}</span><button class="btn pull-right" ng-click="removeProduct(product)"><span class="glyphicon glyphicon-trash"></span></button></h3>
+						<h3><img ng-src="{{product.Poster}}" alt="poster">{{product.Title}}
+							<span class="badge badge-pill">{{product.Type}}</span>
+							<button class="btn pull-right" ng-click="removeProduct(product)">
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+						</h3>
 					</div>
 						<button class="btn btn-warning" id="total">{{total}}</button>
 					</div>
@@ -57,7 +62,7 @@
 						<p class="info"><span>Acteurs:</span> {{product.Actors}}</p>
 					</div>
 				</section>
-				<button type="submit" name="button" class="btn btn-info add-basket" ng-click="add(product)"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ajouter au panier</button>
+				<button type="submit" name="button" class="btn btn-info add-basket" id="add-basket" ng-click="add(product)"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ajouter au panier</button>
 			</div>
 
 		</div>

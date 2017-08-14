@@ -6,7 +6,7 @@ nav .btn-default {
 }
 .list-group .list-group-item {min-height: 800px;}
 ul.nav {margin:20px auto;}
-.list-group-item img {width: 300px; height: 445px;}
+.list-group-item img {width: 300px; height: 445px; margin-right: 10px;}
 .modal .badge {margin-left: 10px;}
 .add-basket span, .basket span {margin-right: 5px;}
 .glyphicon {
@@ -15,3 +15,4 @@ ul.nav {margin:20px auto;}
 }
 #total {font-size: 20px;margin-top: 10px;}
 p.info span {font-weight:bold;}
+.modal-body img {width: 50px; height: 75px;}
