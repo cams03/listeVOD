@@ -1,0 +1,17 @@
+nav .btn-default {
+	position: fixed;
+	top:0.2%;
+	right:10%;
+	z-index: 100;
+}
+.list-group .list-group-item {min-height: 800px;}
+ul.nav {margin:20px auto;}
+.list-group-item img {width: 300px; height: 445px;}
+.modal .badge {margin-left: 10px;}
+.add-basket span, .basket span {margin-right: 5px;}
+.glyphicon {
+	top:0!important;
+	font-size: 15px;
+}
+#total {font-size: 20px;margin-top: 10px;}
+p.info span {font-weight:bold;}

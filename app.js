@@ -1,16 +1,19 @@
 	var app = angular.module('MovieStore', []);
 
+	var newBasket = [];
+	var total = 0;
+
 	app.controller("storeController", function($scope) {
 		$scope.products = movies;
-		var newBasket = [];
-		var total =
-
-		$scope.add = function(){
-				newBasket.push(movies[0]);
-				document.getElementById("total").innerHTML = total;
-				console.log(newBasket);
+		$scope.add = function(product){
+			if (newBasket.indexOf(product) == -1) {
+				newBasket.push(product);
+				total += 3;
+				document.getElementById("total").innerHTML = "Total: "+total +"<span class='glyphicon glyphicon-euro' aria-hidden='true'></span>";
+				var nbProducts = newBasket.length;
+				document.getElementById("nbProducts").innerHTML = "("+nbProducts+")";
+			}
 		}
-
 	});
 
 	app.controller("panelController", function($scope) {
@@ -24,7 +27,16 @@
 	})
 
 	app.controller("basketController",function($scope){
-
+		$scope.baskets = newBasket;
+		$scope.total = total;
+		$scope.removeProduct = function(product){
+				total -= 3;
+				document.getElementById("total").innerHTML = "Total: "+total +"<span class='glyphicon glyphicon-euro' aria-hidden='true'></span>";
+				var index = newBasket.indexOf(product);	
+				newBasket.splice(index,1);
+				$scope.baskets = newBasket;
+				console.log(newBasket)
+		}
 	})
 
 	var movies = [
@@ -201,7 +213,7 @@
 	  },
 	  {
 	    "Title": "Game of Thrones",
-	    "Year": "2011–",
+	    "Year": "2011-",
 	    "Rated": "TV-MA",
 	    "Released": "17 Apr 2011",
 	    "Runtime": "56 min",
@@ -231,7 +243,7 @@
 	  },
 	  {
 	    "Title": "Vikings",
-	    "Year": "2013–",
+	    "Year": "2013-",
 	    "Rated": "TV-14",
 	    "Released": "03 Mar 2013",
 	    "Runtime": "44 min",
@@ -261,7 +273,7 @@
 	  },
 	  {
 	    "Title": "Gotham",
-	    "Year": "2014–",
+	    "Year": "2014-",
 	    "Rated": "TV-14",
 	    "Released": "01 Aug 2014",
 	    "Runtime": "42 min",
@@ -291,7 +303,7 @@
 	  },
 	  {
 	    "Title": "Power",
-	    "Year": "2014–",
+	    "Year": "2014-",
 	    "Rated": "TV-MA",
 	    "Released": "N/A",
 	    "Runtime": "50 min",
@@ -321,7 +333,7 @@
 	  },
 	  {
 	    "Title": "Narcos",
-	    "Year": "2015–",
+	    "Year": "2015-",
 	    "Rated": "TV-MA",
 	    "Released": "28 Aug 2015",
 	    "Runtime": "49 min",
@@ -351,7 +363,7 @@
 	  },
 	  {
 	    "Title": "Breaking Bad",
-	    "Year": "2008–2013",
+	    "Year": "2008-2013",
 	    "Rated": "TV-14",
 	    "Released": "20 Jan 2008",
 	    "Runtime": "49 min",
@@ -469,7 +481,7 @@
 	  {
 	    "ComingSoon": true,
 	    "Title": "Luke Cage",
-	    "Year": "2016–",
+	    "Year": "2016-",
 	    "Rated": "TV-MA",
 	    "Released": "30 Sep 2016",
 	    "Runtime": "55 min",
