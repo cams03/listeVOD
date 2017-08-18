@@ -1,0 +1,21 @@
+<div class="modal" id="basket" ng-controller="basketController">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<h4 class="modal-title">Votre panier</h4>
+			</div>
+			<div class="modal-body">
+				<div class="list-group-item" ng-repeat="product in baskets">
+					<h3><img ng-src="{{product.Poster}}" alt="poster">{{product.Title}}
+						<span class="badge badge-pill">{{product.Type}}</span>
+						<button class="btn pull-right" ng-click="removeProduct(product)">
+							<span class="glyphicon glyphicon-trash"></span>
+						</button>
+					</h3>
+				</div>
+				<button class="btn btn-warning" id="total">{{total}}</button>
+			</div>
+		</div>
+	</div>
+</div>

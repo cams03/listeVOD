@@ -28,3 +28,21 @@ app.directive('productInfo', function(){
 			templateUrl: 'directives/add-cart-btn.html'
 		};
 	});
+	app.directive('cartBtn', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'directives/cart-btn.html'
+		};
+	});
+	app.directive('modal', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'directives/modal.html'
+		};
+	});
+	app.directive('headerTitle', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'directives/header-title.html'
+		};
+	});

@@ -11,36 +11,11 @@
 
 <body>
 	<nav class="nav navbar navbar-inverse">
-		<div class="container">
-			<button type="button" data-toggle="modal" href="#basket" class="btn btn-default btn-warning btn-lg navbar-right basket">
-  			<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Panier <span id="nbProducts"></span>
-			</button>
-		</div>
-		<div class="modal" id="basket" ng-controller="basketController">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">x</button>
-						<h4 class="modal-title">Votre panier</h4>
-					</div>
-					<div class="modal-body">
-					<div class="list-group-item" ng-repeat="product in baskets">
-						<h3><img ng-src="{{product.Poster}}" alt="poster">{{product.Title}}
-							<span class="badge badge-pill">{{product.Type}}</span>
-							<button class="btn pull-right" ng-click="removeProduct(product)">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-						</h3>
-					</div>
-						<button class="btn btn-warning" id="total">{{total}}</button>
-					</div>
-				</div>
-			</div>
-		</div>
+		<cart-btn></cart-btn>
+		<modal></modal>
 	</nav>
 	<div class="jumbotron">
-	<h1 class="text-center">Bienvenue sur votre vidéo club en ligne</h1>
-	<h3 class="text-center">Tous les films et séries à 3€ seulement !</h3>
+		<header-title></header-title>
 	</div>
 	<div ng-controller="storeController">
 		<div class="list-group">
