@@ -8,7 +8,7 @@
 		$scope.add = function(product){
 			if (newBasket.indexOf(product) == -1) {
 				newBasket.push(product);
-				document.getElementById("cart-btn").className += " hvr-pulse"; //Ajout de la classe pour l'animation
+				document.getElementById("cart-btn").classList.add("hvr-wobble-vertical");
 				total += 3;
 				document.getElementById("total").innerHTML = "Total: "+total +"<span class='glyphicon glyphicon-euro' aria-hidden='true'></span>";
 				var nbProducts = newBasket.length;
